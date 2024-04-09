@@ -15,3 +15,11 @@ SELECT winner
 select yr, subject
 from nobel
 where winner='Albert Einstein'
+
+4. Show the countries in Europe with a per capita GDP greater than 'United Kingdom'.
+Per Capita GDPThe per capita GDP is the gdp/population
+
+select name from world
+where continent='Europe' and gdp/population > 
+(select gdp/population from world
+where name='United Kingdom');
