@@ -25,5 +25,13 @@ FROM game g
 JOIN eteam e1 ON g.team1 = e1.id
 WHERE e1.coach LIKE '%Fernando Santos%'
 
+5. show the name of all players who scored a goal against Germany.
+
+SELECT DISTINCT player
+FROM goal
+JOIN game ON (goal.matchid = game.id)
+WHERE (game.team1 = 'GER' OR game.team2 = 'GER')
+AND goal.teamid != 'GER'
+
 
 
