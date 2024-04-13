@@ -40,3 +40,8 @@ SELECT teamname, count(gtime)
   group by teamname
  ORDER BY teamname
 
+7. Show the stadium and the number of goals scored in each stadium.
+
+select stadium, count(gtime) from 
+game join goal on (id=matchid)
+group by stadium
