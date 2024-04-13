@@ -33,5 +33,10 @@ JOIN game ON (goal.matchid = game.id)
 WHERE (game.team1 = 'GER' OR game.team2 = 'GER')
 AND goal.teamid != 'GER'
 
+6. Show teamname and the total number of goals scored.
 
+SELECT teamname, count(gtime)
+  FROM goal JOIN eteam ON id=teamid
+  group by teamname
+ ORDER BY teamname
 
